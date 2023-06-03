@@ -4,7 +4,7 @@
 
 # About The Project
 
-This is a 3rd party utility to manage accounts when using the Devious Client.
+This is a 3rd party utility written in C# to manage accounts when using the Devious Client.
 It will store the Account Username, Account password, Proxy IP, Proxy Port, Proxy Username, Proxy Password, and Notes for each account.
 
 When an account is selected within the Bulk Launcher it will launch a new instance of the Devious client passing the account's parameters and allowing it to automatically login.
@@ -13,5 +13,10 @@ This application was created to simplify account management in a manner that is 
 
 This project by no means has any associating with the Devious Client or it's creator jbx5. This project's intentions are to help people manage a vast number of accounts in an efficient manner.
 
+# Getting Started
 
+
+# Contact
+
+Discord: ICSharperNow#2771
 
