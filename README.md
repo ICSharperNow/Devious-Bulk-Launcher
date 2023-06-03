@@ -28,6 +28,7 @@ private static String Username = "";
 private static String Password = "";
 ```
 
+
 Under line #193
 ```
 final ArgumentAcceptingOptionSpec<String> loginInfo = parser
@@ -35,32 +36,34 @@ final ArgumentAcceptingOptionSpec<String> loginInfo = parser
 		.withRequiredArg().ofType(String.class);
 ```
 
+
 Under line #263
 ```
 if (options.has("login"))
 {
-  String[] login = options.valueOf(loginInfo).split(":");
+  	String[] login = options.valueOf(loginInfo).split(":");
 
 	if (login.length >= 2)
 	{
-	  //Enable flag
-	  Enable_Auto_Login = true;
-
+		//Enable flag
+		Enable_Auto_Login = true;
+		
 		//Set username
 		Username = login[0];
 
 		//Set password
 		Password = login[1];
-  }
+  	}
 }
 ```
+
 
 Under line #576
 ```
 //Modify config to auto login with passed in parameters
 if (Enable_Auto_Login == true)
 {
-  //Set username
+	//Set username
 	configManager.setConfiguration("hootautologin", "username", RuneLite.Username);
 	System.out.println("Automatic Login Username: " + RuneLite.Username);
 
