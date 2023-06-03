@@ -7,7 +7,7 @@
 This is a 3rd party utility written in C# to manage accounts when using the Devious Client.
 It will store the Account Username, Account password, Proxy IP, Proxy Port, Proxy Username, Proxy Password, and Notes for each account.
 
-When an account is selected within the Bulk Launcher it will launch a new instance of the Devious client passing the account's parameters and allowing it to automatically login.
+When an account is selected within the Bulk Launcher it will launch a new instance of the Devious client passing the account/proxy/world parameters allowing it to automatically login.
 
 This application was created to simplify account management in a manner that is very similar to TriBot's Bulk Account Launcher.
 
