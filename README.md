@@ -81,7 +81,7 @@ if (Enable_Auto_Login == true)
 }
 ```
 
-#Usage
+# Usage
 Point the application to the client's .jar file and enjoy!
 
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/ee334a49-fd03-4a15-9f31-0004b7bc18e9)
