@@ -11,9 +11,14 @@ When an account is selected within the Bulk Launcher it will launch a new instan
 
 This application was created to simplify account management in a manner that is very similar to TriBot's Bulk Account Launcher.
 
-This project by no means has any associating with the Devious Client or it's creator jbx5. This project's intentions are to help people manage a vast number of accounts in an efficient manner.
+This project by no means has any associating with the Devious Client or it's creator jbx5. This project's intentions are to help individuals manage a vast number of accounts in an efficient manner.
 
 # Getting Started
+
+In order to use this utility successfully you will need to modify the RuneLite.java file within the existing Devious Client.
+You will also need to install the "unethical-autologin" plugin located here: https://github.com/melxin/devious-plugins-extended/tree/master/unethical-autologin - credit to Melxin
+
+##test
 
 
 # Contact
