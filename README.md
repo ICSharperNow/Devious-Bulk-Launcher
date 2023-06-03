@@ -18,5 +18,5 @@ This project by no means has any associating with the Devious Client or it's cre
 
 # Contact
 
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/0a0240d5-be33-4204-85d4-366ad4c112cd) ICSharperNow#2771
+Discord: ICSharperNow#2771
 
