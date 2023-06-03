@@ -81,7 +81,7 @@ if (Enable_Auto_Login == true)
 }
 ```
 
-Lastly I would highly recommend disabling "Stretched Mode" plugin as it seems to conflict with the "unethical-autologin" plugin.
+Lastly I would highly recommend disabling the "Stretched Mode" plugin as it seems to conflict with the "unethical-autologin" plugin.
 
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/c4d94b27-ce7d-4432-9e00-270fb4a69dad)
 
