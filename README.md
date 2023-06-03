@@ -16,10 +16,64 @@ This project by no means has any associating with the Devious Client or it's cre
 # Getting Started
 
 In order to use this utility successfully you will need to modify the RuneLite.java file within the existing Devious Client.
+
 You will also need to install the "unethical-autologin" plugin located here: https://github.com/melxin/devious-plugins-extended/tree/master/unethical-autologin - credit to Melxin
 
-##test
+The following code changes will need to be made within the RuneLite.java file below:
 
+Under line #169
+```
+private static Boolean Enable_Auto_Login = false;
+private static String Username = "";
+private static String Password = "";
+```
+
+Under line #193
+```
+final ArgumentAcceptingOptionSpec<String> loginInfo = parser
+		.accepts("login")
+		.withRequiredArg().ofType(String.class);
+```
+
+Under line #263
+```
+if (options.has("login"))
+{
+  String[] login = options.valueOf(loginInfo).split(":");
+
+	if (login.length >= 2)
+	{
+	  //Enable flag
+	  Enable_Auto_Login = true;
+
+		//Set username
+		Username = login[0];
+
+		//Set password
+		Password = login[1];
+  }
+}
+```
+
+Under line #576
+```
+//Modify config to auto login with passed in parameters
+if (Enable_Auto_Login == true)
+{
+  //Set username
+	configManager.setConfiguration("hootautologin", "username", RuneLite.Username);
+	System.out.println("Automatic Login Username: " + RuneLite.Username);
+
+	//Set password
+	configManager.setConfiguration("hootautologin", "password", RuneLite.Password);
+
+	//Enable UnethicalAutoLoginPlugin
+	configManager.setConfiguration("runelite", "unethicalautologinplugin", true);
+
+	//Reset flag
+	Enable_Auto_Login = false;
+}
+```
 
 # Contact
 
