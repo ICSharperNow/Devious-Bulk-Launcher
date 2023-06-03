@@ -84,14 +84,14 @@ if (Enable_Auto_Login == true)
 
 Lastly I would highly recommend disabling the "Stretched Mode" plugin as it seems to conflict with the "unethical-autologin" plugin.
 
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/c4d94b27-ce7d-4432-9e00-270fb4a69dad)
+![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/1d60f381-f894-4046-923b-496a71862a48)
 
 
 # Usage
 Point the application to the client's .jar file and enjoy!
 
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/ee334a49-fd03-4a15-9f31-0004b7bc18e9)
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/e0386eb2-bf2f-4a4a-a1b8-dfbc2ed2190e)
+![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/8fc724c0-ad17-4960-938d-2e135e0b9ab5)
+![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/40f58928-1d90-48b0-80ef-63a9e6cda0c4)
 
 
 # Contact
