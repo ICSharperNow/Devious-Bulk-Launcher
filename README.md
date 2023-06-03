@@ -19,7 +19,7 @@ In order to use this utility successfully you will need to modify the RuneLite.j
 
 You will also need to install the "unethical-autologin" plugin located here: https://github.com/melxin/devious-plugins-extended/tree/master/unethical-autologin - credit to Melxin
 
-The following code changes will need to be made within the RuneLite.java file below:
+The code changes to the RuneLite.java file should be as follows below:
 
 Under line #169
 ```
