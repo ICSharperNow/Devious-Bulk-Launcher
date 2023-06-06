@@ -303,23 +303,32 @@ namespace Devious_Bulk_Launcher
                             Concatenated_Parameters += "-login " + Grid_Row.Cells[1].Value.ToString() + ":" + Grid_Row.Cells[2].Value.ToString() + " ";
 
                             //Proxy
-                            if (Grid_Row.Cells[3].Value.ToString().Trim() != "" && Grid_Row.Cells[4].Value.ToString().Trim() != "")
+                            if (Grid_Row.Cells[3].Value != null && Grid_Row.Cells[4].Value != null)
                             {
-                                if (Grid_Row.Cells[5].Value.ToString().Trim() != "" && Grid_Row.Cells[6].Value.ToString().Trim() != "")
+                                if (Grid_Row.Cells[3].Value.ToString().Trim() != "" && Grid_Row.Cells[4].Value.ToString().Trim() != "")
                                 {
-                                    //IP/Port/Username/Password
-                                    Concatenated_Parameters += "-proxy " + Grid_Row.Cells[3].Value.ToString() + ":" + Grid_Row.Cells[4].Value.ToString() + ":" + Grid_Row.Cells[5].Value.ToString() + ":" + Grid_Row.Cells[6].Value.ToString() + " ";
-                                }
-                                else
-                                {
-                                    //IP/Port
-                                    Concatenated_Parameters += "-proxy " + Grid_Row.Cells[3].Value.ToString() + ":" + Grid_Row.Cells[4].Value.ToString() + " ";
+                                    if (Grid_Row.Cells[5].Value != null && Grid_Row.Cells[6].Value != null)
+                                    {
+                                        if (Grid_Row.Cells[5].Value.ToString().Trim() != "" && Grid_Row.Cells[6].Value.ToString().Trim() != "")
+                                        {
+                                            //IP/Port/Username/Password
+                                            Concatenated_Parameters += "-proxy " + Grid_Row.Cells[3].Value.ToString() + ":" + Grid_Row.Cells[4].Value.ToString() + ":" + Grid_Row.Cells[5].Value.ToString() + ":" + Grid_Row.Cells[6].Value.ToString() + " ";
+                                        }
+                                    }                                    
+                                    else
+                                    {
+                                        //IP/Port
+                                        Concatenated_Parameters += "-proxy " + Grid_Row.Cells[3].Value.ToString() + ":" + Grid_Row.Cells[4].Value.ToString() + " ";
+                                    }
                                 }
                             }
 
                             //World #
-                            if (Grid_Row.Cells[7].Value.ToString().Trim() != "")
-                            {Concatenated_Parameters += "-world " + Grid_Row.Cells[7].Value.ToString() + " ";}
+                            if (Grid_Row.Cells[7].Value != null)
+                            {
+                                if (Grid_Row.Cells[7].Value.ToString().Trim() != "")
+                                {Concatenated_Parameters += "-world " + Grid_Row.Cells[7].Value.ToString() + " ";}
+                            }
 
                             //Start process dynamically with given parameters
                             Client_Start_Parameters.Add(@"/C java -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());
