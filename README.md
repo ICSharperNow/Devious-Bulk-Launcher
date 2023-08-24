@@ -96,5 +96,5 @@ Point the application to the client's .jar file and enjoy!
 
 # Contact
 
-Discord: ICSharperNow#2771
+Discord: ICSharperNow
 
