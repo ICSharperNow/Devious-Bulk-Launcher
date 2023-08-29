@@ -37,13 +37,6 @@ namespace Devious_Bulk_Launcher
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Grid_View = new System.Windows.Forms.DataGridView();
-            this.Button_Add = new System.Windows.Forms.Button();
-            this.Button_Launch = new System.Windows.Forms.Button();
-            this.Button_Remove = new System.Windows.Forms.Button();
-            this.Button_Save_Config = new System.Windows.Forms.Button();
-            this.Button_Uncheck_All = new System.Windows.Forms.Button();
-            this.Label_Rows_Checked = new System.Windows.Forms.Label();
-            this.Button_Settings = new System.Windows.Forms.Button();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Account_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Account_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +46,13 @@ namespace Devious_Bulk_Launcher
             this.Proxy_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.World_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button_Add = new System.Windows.Forms.Button();
+            this.Button_Launch = new System.Windows.Forms.Button();
+            this.Button_Remove = new System.Windows.Forms.Button();
+            this.Button_Save_Config = new System.Windows.Forms.Button();
+            this.Button_Uncheck_All = new System.Windows.Forms.Button();
+            this.Label_Rows_Checked = new System.Windows.Forms.Label();
+            this.Button_Settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_View)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +116,64 @@ namespace Devious_Bulk_Launcher
             this.Grid_View.ShowCellToolTips = false;
             this.Grid_View.Size = new System.Drawing.Size(1415, 464);
             this.Grid_View.TabIndex = 0;
+            // 
+            // Select
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.NullValue = false;
+            this.Select.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Select.FillWeight = 200F;
+            this.Select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Select.HeaderText = "Select";
+            this.Select.Name = "Select";
+            this.Select.Width = 75;
+            // 
+            // Account_Username
+            // 
+            this.Account_Username.HeaderText = "Account Username";
+            this.Account_Username.Name = "Account_Username";
+            this.Account_Username.Width = 175;
+            // 
+            // Account_Password
+            // 
+            this.Account_Password.HeaderText = "Account Password";
+            this.Account_Password.Name = "Account_Password";
+            this.Account_Password.Width = 170;
+            // 
+            // Proxy_IP
+            // 
+            this.Proxy_IP.HeaderText = "Proxy IP";
+            this.Proxy_IP.Name = "Proxy_IP";
+            this.Proxy_IP.Width = 125;
+            // 
+            // Proxy_Port
+            // 
+            this.Proxy_Port.HeaderText = "Proxy Port";
+            this.Proxy_Port.Name = "Proxy_Port";
+            // 
+            // Proxy_Username
+            // 
+            this.Proxy_Username.HeaderText = "Proxy Username";
+            this.Proxy_Username.Name = "Proxy_Username";
+            this.Proxy_Username.Width = 150;
+            // 
+            // Proxy_Password
+            // 
+            this.Proxy_Password.HeaderText = "Proxy Password";
+            this.Proxy_Password.Name = "Proxy_Password";
+            this.Proxy_Password.Width = 150;
+            // 
+            // World_No
+            // 
+            this.World_No.HeaderText = "World #";
+            this.World_No.Name = "World_No";
+            // 
+            // Notes
+            // 
+            this.Notes.HeaderText = "Notes";
+            this.Notes.Name = "Notes";
+            this.Notes.Width = 330;
             // 
             // Button_Add
             // 
@@ -199,64 +257,6 @@ namespace Devious_Bulk_Launcher
             this.Button_Settings.Size = new System.Drawing.Size(55, 47);
             this.Button_Settings.TabIndex = 12;
             this.Button_Settings.UseVisualStyleBackColor = false;
-            // 
-            // Select
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.NullValue = false;
-            this.Select.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Select.FillWeight = 200F;
-            this.Select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Select.HeaderText = "Select";
-            this.Select.Name = "Select";
-            this.Select.Width = 75;
-            // 
-            // Account_Username
-            // 
-            this.Account_Username.HeaderText = "Account Username";
-            this.Account_Username.Name = "Account_Username";
-            this.Account_Username.Width = 175;
-            // 
-            // Account_Password
-            // 
-            this.Account_Password.HeaderText = "Account Password";
-            this.Account_Password.Name = "Account_Password";
-            this.Account_Password.Width = 170;
-            // 
-            // Proxy_IP
-            // 
-            this.Proxy_IP.HeaderText = "Proxy IP";
-            this.Proxy_IP.Name = "Proxy_IP";
-            this.Proxy_IP.Width = 125;
-            // 
-            // Proxy_Port
-            // 
-            this.Proxy_Port.HeaderText = "Proxy Port";
-            this.Proxy_Port.Name = "Proxy_Port";
-            // 
-            // Proxy_Username
-            // 
-            this.Proxy_Username.HeaderText = "Proxy Username";
-            this.Proxy_Username.Name = "Proxy_Username";
-            this.Proxy_Username.Width = 150;
-            // 
-            // Proxy_Password
-            // 
-            this.Proxy_Password.HeaderText = "Proxy Password";
-            this.Proxy_Password.Name = "Proxy_Password";
-            this.Proxy_Password.Width = 150;
-            // 
-            // World_No
-            // 
-            this.World_No.HeaderText = "World #";
-            this.World_No.Name = "World_No";
-            // 
-            // Notes
-            // 
-            this.Notes.HeaderText = "Notes";
-            this.Notes.Name = "Notes";
-            this.Notes.Width = 330;
             // 
             // Form1
             // 

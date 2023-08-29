@@ -27,7 +27,9 @@ namespace Devious_Bulk_Launcher
         public static string Theme;
         public static string Client_Launch_Seconds;
         public static bool Refresh_UI;
-		
+        public static bool Application_Closing;
+        public static bool Launch_Client_In_Debug_Mode;
+
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +41,8 @@ namespace Devious_Bulk_Launcher
             Theme = "";
             Client_Launch_Seconds = "";
             Refresh_UI = false;
+            Application_Closing = false;
+            Launch_Client_In_Debug_Mode = false;
 
             //Set events
             this.FormClosing += Form_Closing;
@@ -68,7 +72,7 @@ namespace Devious_Bulk_Launcher
             Checked_Count = 0;
 
             //Repeat process every 0.5 seconds
-            while (true)
+            while (Application_Closing == false)
             {
                 try
                 {
@@ -86,7 +90,7 @@ namespace Devious_Bulk_Launcher
                     }
 
                     //Update label with new count
-                    Invoke(new Action(() => { Label_Rows_Checked.Text = "Rows selected: " + Checked_Count.ToString(); }));
+                    Invoke(new Action(() => {Label_Rows_Checked.Text = "Rows selected: " + Checked_Count.ToString();}));
 
                     //Suspend thread
                     System.Threading.Thread.Sleep(500);
@@ -137,16 +141,23 @@ namespace Devious_Bulk_Launcher
                 Client_Executable_Directory = Settings_File_Content[0].Trim();
                 Theme = Settings_File_Content[1].Trim();
                 Client_Launch_Seconds = Settings_File_Content[2].Trim();
+
+                //Added to handle prior users that do not have this setting already
+                if (Settings_File_Content[3].Trim() == "")
+                {Launch_Client_In_Debug_Mode = false;}
+                else
+                {Launch_Client_In_Debug_Mode = Boolean.Parse(Settings_File_Content[3].Trim());}
             }
             else if (System.IO.File.Exists("Devious_Bulk_Launcher_Settings.txt") == false)
             {
                 //Create and append default settings to new file
-                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||");
+                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||false|||||");
 
                 //Assign default settings
                 Client_Executable_Directory = "";
                 Theme = "Dark";
                 Client_Launch_Seconds = "45";
+                Launch_Client_In_Debug_Mode = false;
             }
         }
 
@@ -168,11 +179,19 @@ namespace Devious_Bulk_Launcher
                 Button_Save_Config_Click(null, null);
 
                 //Stop threads
-                Rows_Selected_Thread.Abort();
+                try{Rows_Selected_Thread.Abort();}catch(Exception Exception){}
                 try{Delayed_Launch_Thread.Abort();}catch(Exception Exception){}
+
+                //Set closing flag
+                Application_Closing = true;
 
                 //Display message box to user notifying of successful save
                 MessageBox.Show("Configuration file saved successfully!", "Application Exit", MessageBoxButtons.OK);
+            }
+            else if (Dialog_Result == DialogResult.No)
+            {
+                //Set closing flag
+                Application_Closing = true;
             }
             else if (Dialog_Result == DialogResult.Cancel)
             {
@@ -264,7 +283,7 @@ namespace Devious_Bulk_Launcher
             }
 
             //Create and append settings to new file
-            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||");
+            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||" + Launch_Client_In_Debug_Mode + "|||||");
         }
 
         private void Button_Add_Click(object sender, EventArgs e)
@@ -330,6 +349,10 @@ namespace Devious_Bulk_Launcher
                                 {Concatenated_Parameters += "-world " + Grid_Row.Cells[7].Value.ToString() + " ";}
                             }
 
+                            //Debug Mode
+                            if (Launch_Client_In_Debug_Mode == true)
+                            {Concatenated_Parameters += "-debug ";}
+
                             //Start process dynamically with given parameters
                             Client_Start_Parameters.Add(@"/C java -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());
 
@@ -371,12 +394,18 @@ namespace Devious_Bulk_Launcher
             //Loop through each Start Parameter
             foreach (string Start_Parameter in Client_Start_Parameters)
             {
-                //Start process with given parameters
-                System.Diagnostics.Process.Start("cmd.exe", Start_Parameter);
+                try
+                {
+                    //Start process with given parameters
+                    System.Diagnostics.Process.Start("cmd.exe", Start_Parameter);
 
-                //Dynamic delay(seconds)
-                System.Threading.Thread.Sleep(1000 * Convert.ToInt32(Client_Launch_Seconds));
+                    //Dynamic delay(seconds)
+                    System.Threading.Thread.Sleep(1000 * Convert.ToInt32(Client_Launch_Seconds));
+                }
+                catch(Exception Exception){}
             }
+
+
         }
 
         private void Button_Remove_Click(object sender, EventArgs e)

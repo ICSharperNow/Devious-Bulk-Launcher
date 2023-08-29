@@ -37,6 +37,9 @@
             this.Button_Set_Executable_Directory = new System.Windows.Forms.Button();
             this.Label_Sec_Between_Client_Launches = new System.Windows.Forms.Label();
             this.Number_Up_Down_Client_Launch_Seconds = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Radio_Button_Enabled = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Disabled = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Number_Up_Down_Client_Launch_Seconds)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,12 +151,55 @@
             0,
             0});
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(44, 217);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 22);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Launch client in debug mode:";
+            // 
+            // Radio_Button_Enabled
+            // 
+            this.Radio_Button_Enabled.AutoSize = true;
+            this.Radio_Button_Enabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Enabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Enabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Enabled.Location = new System.Drawing.Point(517, 215);
+            this.Radio_Button_Enabled.Name = "Radio_Button_Enabled";
+            this.Radio_Button_Enabled.Size = new System.Drawing.Size(98, 26);
+            this.Radio_Button_Enabled.TabIndex = 15;
+            this.Radio_Button_Enabled.Text = "Enabled";
+            this.Radio_Button_Enabled.UseVisualStyleBackColor = false;
+            // 
+            // Radio_Button_Disabled
+            // 
+            this.Radio_Button_Disabled.AutoSize = true;
+            this.Radio_Button_Disabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Disabled.Checked = true;
+            this.Radio_Button_Disabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Disabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Disabled.Location = new System.Drawing.Point(354, 215);
+            this.Radio_Button_Disabled.Name = "Radio_Button_Disabled";
+            this.Radio_Button_Disabled.Size = new System.Drawing.Size(108, 26);
+            this.Radio_Button_Disabled.TabIndex = 14;
+            this.Radio_Button_Disabled.TabStop = true;
+            this.Radio_Button_Disabled.Text = "Disabled";
+            this.Radio_Button_Disabled.UseVisualStyleBackColor = false;
+            // 
             // Settings_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(987, 239);
+            this.ClientSize = new System.Drawing.Size(987, 280);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Radio_Button_Enabled);
+            this.Controls.Add(this.Radio_Button_Disabled);
             this.Controls.Add(this.Label_Sec_Between_Client_Launches);
             this.Controls.Add(this.Number_Up_Down_Client_Launch_Seconds);
             this.Controls.Add(this.Button_Set_Executable_Directory);
@@ -180,5 +226,8 @@
         private System.Windows.Forms.Button Button_Set_Executable_Directory;
         private System.Windows.Forms.Label Label_Sec_Between_Client_Launches;
         private System.Windows.Forms.NumericUpDown Number_Up_Down_Client_Launch_Seconds;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton Radio_Button_Enabled;
+        private System.Windows.Forms.RadioButton Radio_Button_Disabled;
     }
 }

@@ -22,7 +22,9 @@ namespace Devious_Bulk_Launcher
             Button_Set_Executable_Directory.Click += Button_Set_Executable_Directory_Click;
             Radio_Button_Dark_Theme.Click += Radio_Button_Dark_Theme_Click;
             Radio_Button_Light_Theme.Click += Radio_Button_Light_Theme_Click;
-            Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;
+            Radio_Button_Enabled.Click += Radio_Button_Enabled_Click;
+            Radio_Button_Disabled.Click += Radio_Button_Disabled_Click;
+            Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;            
 
             //Set client executable directory textbox
             Textbox_Client_Executable_Directory.Text = Form1.Client_Executable_Directory;
@@ -32,6 +34,12 @@ namespace Devious_Bulk_Launcher
             {Radio_Button_Dark_Theme.Checked = true;}
             else if (Form1.Theme == "Light")
             {Radio_Button_Light_Theme.Checked = true;}
+
+            //Set Launch Client in Debug Mode radio button
+            if (Form1.Launch_Client_In_Debug_Mode == true)
+            {Radio_Button_Enabled.Checked = true;}
+            else if (Form1.Launch_Client_In_Debug_Mode == false)
+            {Radio_Button_Disabled.Checked = true;}
 
             //Set sec between client launches input
             Number_Up_Down_Client_Launch_Seconds.Value = Convert.ToInt32(Form1.Client_Launch_Seconds);
@@ -94,6 +102,16 @@ namespace Devious_Bulk_Launcher
             Form1.Theme = "Light";
             Form1.Refresh_UI = true;
             this.Refresh();
+        }
+
+        public void Radio_Button_Disabled_Click(object sender, EventArgs e)
+        {
+            Form1.Launch_Client_In_Debug_Mode = false;
+        }
+
+        public void Radio_Button_Enabled_Click(object sender, EventArgs e)
+        {
+            Form1.Launch_Client_In_Debug_Mode = true;
         }
 
         private void Number_Up_Down_Client_Launch_Seconds_ValueChanged(object sender, EventArgs e)
