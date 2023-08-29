@@ -24,7 +24,7 @@ namespace Devious_Bulk_Launcher
             Radio_Button_Light_Theme.Click += Radio_Button_Light_Theme_Click;
             Radio_Button_Enabled.Click += Radio_Button_Enabled_Click;
             Radio_Button_Disabled.Click += Radio_Button_Disabled_Click;
-            Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;            
+            Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;
 
             //Set client executable directory textbox
             Textbox_Client_Executable_Directory.Text = Form1.Client_Executable_Directory;
@@ -71,6 +71,9 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Dark_Theme.ForeColor = Color.WhiteSmoke;
                     Radio_Button_Light_Theme.ForeColor = Color.WhiteSmoke;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.WhiteSmoke;
+                    Label_Launch_Client_In_Debug_Mode.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Disabled.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Enabled.ForeColor = Color.WhiteSmoke;
                 }
                 else if (Form1.Theme == "Light")
                 {
@@ -85,6 +88,9 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Dark_Theme.ForeColor = Color.Black;
                     Radio_Button_Light_Theme.ForeColor= Color.Black;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.Black;
+                    Label_Launch_Client_In_Debug_Mode.ForeColor = Color.Black;
+                    Radio_Button_Disabled.ForeColor = Color.Black;
+                    Radio_Button_Enabled.ForeColor = Color.Black;
                 }
             }
             catch (Exception Exception){}
