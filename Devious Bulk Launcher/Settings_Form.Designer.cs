@@ -271,7 +271,7 @@
             this.Label_Hide_Console_Window_When_Launching.Name = "Label_Hide_Console_Window_When_Launching";
             this.Label_Hide_Console_Window_When_Launching.Size = new System.Drawing.Size(360, 22);
             this.Label_Hide_Console_Window_When_Launching.TabIndex = 21;
-            this.Label_Hide_Console_Window_When_Launching.Text = "Hide Console Window When Launching:";
+            this.Label_Hide_Console_Window_When_Launching.Text = "Hide console window when launching:";
             // 
             // Settings_Form
             // 
