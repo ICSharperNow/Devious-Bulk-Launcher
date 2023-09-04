@@ -37,14 +37,19 @@
             this.Label_Sec_Between_Client_Launches = new System.Windows.Forms.Label();
             this.Number_Up_Down_Client_Launch_Seconds = new System.Windows.Forms.NumericUpDown();
             this.Label_Launch_Client_In_Debug_Mode = new System.Windows.Forms.Label();
-            this.Radio_Button_Enabled = new System.Windows.Forms.RadioButton();
-            this.Radio_Button_Disabled = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled = new System.Windows.Forms.RadioButton();
             this.Panel_Theme = new System.Windows.Forms.Panel();
             this.Radio_Button_Light_Theme = new System.Windows.Forms.RadioButton();
             this.Panel_Launch_Client_In_Debug_Mode = new System.Windows.Forms.Panel();
+            this.Panel_Hide_Console_Window_When_Launching = new System.Windows.Forms.Panel();
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled = new System.Windows.Forms.RadioButton();
+            this.Label_Hide_Console_Window_When_Launching = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Number_Up_Down_Client_Launch_Seconds)).BeginInit();
             this.Panel_Theme.SuspendLayout();
             this.Panel_Launch_Client_In_Debug_Mode.SuspendLayout();
+            this.Panel_Hide_Console_Window_When_Launching.SuspendLayout();
             this.SuspendLayout();
             // 
             // Textbox_Client_Executable_Directory
@@ -154,33 +159,33 @@
             this.Label_Launch_Client_In_Debug_Mode.TabIndex = 16;
             this.Label_Launch_Client_In_Debug_Mode.Text = "Launch client in debug mode:";
             // 
-            // Radio_Button_Enabled
+            // Radio_Button_Launch_Client_In_Debug_Mode_Enabled
             // 
-            this.Radio_Button_Enabled.AutoSize = true;
-            this.Radio_Button_Enabled.BackColor = System.Drawing.Color.Transparent;
-            this.Radio_Button_Enabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Radio_Button_Enabled.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Radio_Button_Enabled.Location = new System.Drawing.Point(145, 12);
-            this.Radio_Button_Enabled.Name = "Radio_Button_Enabled";
-            this.Radio_Button_Enabled.Size = new System.Drawing.Size(98, 26);
-            this.Radio_Button_Enabled.TabIndex = 15;
-            this.Radio_Button_Enabled.Text = "Enabled";
-            this.Radio_Button_Enabled.UseVisualStyleBackColor = false;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.AutoSize = true;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Location = new System.Drawing.Point(145, 12);
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Name = "Radio_Button_Launch_Client_In_Debug_Mode_Enabled";
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Size = new System.Drawing.Size(98, 26);
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.TabIndex = 15;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Text = "Enabled";
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled.UseVisualStyleBackColor = false;
             // 
-            // Radio_Button_Disabled
+            // Radio_Button_Launch_Client_In_Debug_Mode_Disabled
             // 
-            this.Radio_Button_Disabled.AutoSize = true;
-            this.Radio_Button_Disabled.BackColor = System.Drawing.Color.Transparent;
-            this.Radio_Button_Disabled.Checked = true;
-            this.Radio_Button_Disabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Radio_Button_Disabled.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Radio_Button_Disabled.Location = new System.Drawing.Point(3, 12);
-            this.Radio_Button_Disabled.Name = "Radio_Button_Disabled";
-            this.Radio_Button_Disabled.Size = new System.Drawing.Size(108, 26);
-            this.Radio_Button_Disabled.TabIndex = 14;
-            this.Radio_Button_Disabled.TabStop = true;
-            this.Radio_Button_Disabled.Text = "Disabled";
-            this.Radio_Button_Disabled.UseVisualStyleBackColor = false;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.AutoSize = true;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Checked = true;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Location = new System.Drawing.Point(3, 12);
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Name = "Radio_Button_Launch_Client_In_Debug_Mode_Disabled";
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Size = new System.Drawing.Size(108, 26);
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.TabIndex = 14;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.TabStop = true;
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Text = "Disabled";
+            this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled.UseVisualStyleBackColor = false;
             // 
             // Panel_Theme
             // 
@@ -209,20 +214,73 @@
             // Panel_Launch_Client_In_Debug_Mode
             // 
             this.Panel_Launch_Client_In_Debug_Mode.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_Launch_Client_In_Debug_Mode.Controls.Add(this.Radio_Button_Enabled);
-            this.Panel_Launch_Client_In_Debug_Mode.Controls.Add(this.Radio_Button_Disabled);
+            this.Panel_Launch_Client_In_Debug_Mode.Controls.Add(this.Radio_Button_Launch_Client_In_Debug_Mode_Enabled);
+            this.Panel_Launch_Client_In_Debug_Mode.Controls.Add(this.Radio_Button_Launch_Client_In_Debug_Mode_Disabled);
             this.Panel_Launch_Client_In_Debug_Mode.ForeColor = System.Drawing.Color.Transparent;
             this.Panel_Launch_Client_In_Debug_Mode.Location = new System.Drawing.Point(340, 205);
             this.Panel_Launch_Client_In_Debug_Mode.Name = "Panel_Launch_Client_In_Debug_Mode";
             this.Panel_Launch_Client_In_Debug_Mode.Size = new System.Drawing.Size(244, 51);
             this.Panel_Launch_Client_In_Debug_Mode.TabIndex = 20;
             // 
+            // Panel_Hide_Console_Window_When_Launching
+            // 
+            this.Panel_Hide_Console_Window_When_Launching.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_Hide_Console_Window_When_Launching.Controls.Add(this.Radio_Button_Hide_Console_Window_When_Launching_Enabled);
+            this.Panel_Hide_Console_Window_When_Launching.Controls.Add(this.Radio_Button_Hide_Console_Window_When_Launching_Disabled);
+            this.Panel_Hide_Console_Window_When_Launching.ForeColor = System.Drawing.Color.Transparent;
+            this.Panel_Hide_Console_Window_When_Launching.Location = new System.Drawing.Point(410, 262);
+            this.Panel_Hide_Console_Window_When_Launching.Name = "Panel_Hide_Console_Window_When_Launching";
+            this.Panel_Hide_Console_Window_When_Launching.Size = new System.Drawing.Size(244, 51);
+            this.Panel_Hide_Console_Window_When_Launching.TabIndex = 22;
+            // 
+            // Radio_Button_Hide_Console_Window_When_Launching_Enabled
+            // 
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.AutoSize = true;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.Location = new System.Drawing.Point(145, 12);
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.Name = "Radio_Button_Hide_Console_Window_When_Launching_Enabled";
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.Size = new System.Drawing.Size(98, 26);
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.TabIndex = 15;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.Text = "Enabled";
+            this.Radio_Button_Hide_Console_Window_When_Launching_Enabled.UseVisualStyleBackColor = false;
+            // 
+            // Radio_Button_Hide_Console_Window_When_Launching_Disabled
+            // 
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.AutoSize = true;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.BackColor = System.Drawing.Color.Transparent;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Checked = true;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Location = new System.Drawing.Point(3, 12);
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Name = "Radio_Button_Hide_Console_Window_When_Launching_Disabled";
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Size = new System.Drawing.Size(108, 26);
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.TabIndex = 14;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.TabStop = true;
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.Text = "Disabled";
+            this.Radio_Button_Hide_Console_Window_When_Launching_Disabled.UseVisualStyleBackColor = false;
+            // 
+            // Label_Hide_Console_Window_When_Launching
+            // 
+            this.Label_Hide_Console_Window_When_Launching.AutoSize = true;
+            this.Label_Hide_Console_Window_When_Launching.BackColor = System.Drawing.Color.Transparent;
+            this.Label_Hide_Console_Window_When_Launching.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Hide_Console_Window_When_Launching.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Label_Hide_Console_Window_When_Launching.Location = new System.Drawing.Point(44, 274);
+            this.Label_Hide_Console_Window_When_Launching.Name = "Label_Hide_Console_Window_When_Launching";
+            this.Label_Hide_Console_Window_When_Launching.Size = new System.Drawing.Size(360, 22);
+            this.Label_Hide_Console_Window_When_Launching.TabIndex = 21;
+            this.Label_Hide_Console_Window_When_Launching.Text = "Hide Console Window When Launching:";
+            // 
             // Settings_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(987, 280);
+            this.ClientSize = new System.Drawing.Size(987, 343);
+            this.Controls.Add(this.Panel_Hide_Console_Window_When_Launching);
+            this.Controls.Add(this.Label_Hide_Console_Window_When_Launching);
             this.Controls.Add(this.Panel_Launch_Client_In_Debug_Mode);
             this.Controls.Add(this.Panel_Theme);
             this.Controls.Add(this.Label_Launch_Client_In_Debug_Mode);
@@ -241,6 +299,8 @@
             this.Panel_Theme.PerformLayout();
             this.Panel_Launch_Client_In_Debug_Mode.ResumeLayout(false);
             this.Panel_Launch_Client_In_Debug_Mode.PerformLayout();
+            this.Panel_Hide_Console_Window_When_Launching.ResumeLayout(false);
+            this.Panel_Hide_Console_Window_When_Launching.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,10 +315,14 @@
         private System.Windows.Forms.Label Label_Sec_Between_Client_Launches;
         private System.Windows.Forms.NumericUpDown Number_Up_Down_Client_Launch_Seconds;
         private System.Windows.Forms.Label Label_Launch_Client_In_Debug_Mode;
-        private System.Windows.Forms.RadioButton Radio_Button_Enabled;
-        private System.Windows.Forms.RadioButton Radio_Button_Disabled;
+        private System.Windows.Forms.RadioButton Radio_Button_Launch_Client_In_Debug_Mode_Enabled;
+        private System.Windows.Forms.RadioButton Radio_Button_Launch_Client_In_Debug_Mode_Disabled;
         private System.Windows.Forms.Panel Panel_Theme;
         private System.Windows.Forms.RadioButton Radio_Button_Light_Theme;
         private System.Windows.Forms.Panel Panel_Launch_Client_In_Debug_Mode;
+        private System.Windows.Forms.Panel Panel_Hide_Console_Window_When_Launching;
+        private System.Windows.Forms.RadioButton Radio_Button_Hide_Console_Window_When_Launching_Enabled;
+        private System.Windows.Forms.RadioButton Radio_Button_Hide_Console_Window_When_Launching_Disabled;
+        private System.Windows.Forms.Label Label_Hide_Console_Window_When_Launching;
     }
 }

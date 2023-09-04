@@ -22,8 +22,10 @@ namespace Devious_Bulk_Launcher
             Button_Set_Executable_Directory.Click += Button_Set_Executable_Directory_Click;
             Radio_Button_Dark_Theme.Click += Radio_Button_Dark_Theme_Click;
             Radio_Button_Light_Theme.Click += Radio_Button_Light_Theme_Click;
-            Radio_Button_Enabled.Click += Radio_Button_Enabled_Click;
-            Radio_Button_Disabled.Click += Radio_Button_Disabled_Click;
+            Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Click += Radio_Button_Launch_Client_In_Debug_Mode_Enabled_Click;
+            Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Click += Radio_Button_Launch_Client_In_Debug_Mode_Disabled_Click;
+            Radio_Button_Hide_Console_Window_When_Launching_Enabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Enabled_Click;
+            Radio_Button_Hide_Console_Window_When_Launching_Disabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Disabled_Click;
             Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;
 
             //Set client executable directory textbox
@@ -37,9 +39,15 @@ namespace Devious_Bulk_Launcher
 
             //Set Launch Client in Debug Mode radio button
             if (Form1.Launch_Client_In_Debug_Mode == true)
-            {Radio_Button_Enabled.Checked = true;}
+            {Radio_Button_Launch_Client_In_Debug_Mode_Enabled.Checked = true;}
             else if (Form1.Launch_Client_In_Debug_Mode == false)
-            {Radio_Button_Disabled.Checked = true;}
+            {Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Checked = true;}
+
+            //Set Hide Console Window When Launching radio button
+            if (Form1.Hide_Console_Window_When_Launching == true)
+            {Radio_Button_Hide_Console_Window_When_Launching_Enabled.Checked = true;}
+            else if (Form1.Hide_Console_Window_When_Launching == false)
+            {Radio_Button_Hide_Console_Window_When_Launching_Disabled.Checked = true;}
 
             //Set sec between client launches input
             Number_Up_Down_Client_Launch_Seconds.Value = Convert.ToInt32(Form1.Client_Launch_Seconds);
@@ -72,8 +80,10 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Light_Theme.ForeColor = Color.WhiteSmoke;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.WhiteSmoke;
                     Label_Launch_Client_In_Debug_Mode.ForeColor = Color.WhiteSmoke;
-                    Radio_Button_Disabled.ForeColor = Color.WhiteSmoke;
-                    Radio_Button_Enabled.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Launch_Client_In_Debug_Mode_Disabled.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Launch_Client_In_Debug_Mode_Enabled.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Hide_Console_Window_When_Launching_Disabled.ForeColor = Color.WhiteSmoke;
+                    Radio_Button_Hide_Console_Window_When_Launching_Enabled.ForeColor = Color.WhiteSmoke;
                 }
                 else if (Form1.Theme == "Light")
                 {
@@ -89,8 +99,10 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Light_Theme.ForeColor= Color.Black;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.Black;
                     Label_Launch_Client_In_Debug_Mode.ForeColor = Color.Black;
-                    Radio_Button_Disabled.ForeColor = Color.Black;
-                    Radio_Button_Enabled.ForeColor = Color.Black;
+                    Radio_Button_Launch_Client_In_Debug_Mode_Disabled.ForeColor = Color.Black;
+                    Radio_Button_Launch_Client_In_Debug_Mode_Enabled.ForeColor = Color.Black;
+                    Radio_Button_Hide_Console_Window_When_Launching_Disabled.ForeColor = Color.Black;
+                    Radio_Button_Hide_Console_Window_When_Launching_Enabled.ForeColor = Color.Black;
                 }
             }
             catch (Exception Exception){}
@@ -110,14 +122,24 @@ namespace Devious_Bulk_Launcher
             this.Refresh();
         }
 
-        public void Radio_Button_Disabled_Click(object sender, EventArgs e)
+        public void Radio_Button_Launch_Client_In_Debug_Mode_Disabled_Click(object sender, EventArgs e)
         {
             Form1.Launch_Client_In_Debug_Mode = false;
         }
 
-        public void Radio_Button_Enabled_Click(object sender, EventArgs e)
+        public void Radio_Button_Launch_Client_In_Debug_Mode_Enabled_Click(object sender, EventArgs e)
         {
             Form1.Launch_Client_In_Debug_Mode = true;
+        }
+
+        public void Radio_Button_Hide_Console_Window_When_Launching_Enabled_Click(object sender, EventArgs e)
+        {
+            Form1.Hide_Console_Window_When_Launching = true;
+        }
+
+        public void Radio_Button_Hide_Console_Window_When_Launching_Disabled_Click(object sender, EventArgs e)
+        {
+            Form1.Hide_Console_Window_When_Launching = false;
         }
 
         private void Number_Up_Down_Client_Launch_Seconds_ValueChanged(object sender, EventArgs e)
@@ -154,6 +176,6 @@ namespace Devious_Bulk_Launcher
 
         }
 
-
     }
+
 }

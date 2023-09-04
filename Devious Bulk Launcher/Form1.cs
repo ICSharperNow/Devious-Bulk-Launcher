@@ -29,6 +29,7 @@ namespace Devious_Bulk_Launcher
         public static bool Refresh_UI;
         public static bool Application_Closing;
         public static bool Launch_Client_In_Debug_Mode;
+        public static bool Hide_Console_Window_When_Launching;
 
         public Form1()
         {
@@ -43,6 +44,7 @@ namespace Devious_Bulk_Launcher
             Refresh_UI = false;
             Application_Closing = false;
             Launch_Client_In_Debug_Mode = false;
+            Hide_Console_Window_When_Launching = false;
 
             //Set events
             this.FormClosing += Form_Closing;
@@ -142,22 +144,29 @@ namespace Devious_Bulk_Launcher
                 Theme = Settings_File_Content[1].Trim();
                 Client_Launch_Seconds = Settings_File_Content[2].Trim();
 
-                //Added to handle prior users that do not have this setting already
+                //(Launch Client In Debug Mode)Added to handle prior users that do not have this setting already
                 if (Settings_File_Content[3].Trim() == "")
                 {Launch_Client_In_Debug_Mode = false;}
                 else
                 {Launch_Client_In_Debug_Mode = Boolean.Parse(Settings_File_Content[3].Trim());}
+
+                //(Hide Console Window When Launching)Added to handle prior users that do not have this setting already
+                if (Settings_File_Content[4].Trim() == "")
+                {Hide_Console_Window_When_Launching = false;}
+                else
+                {Hide_Console_Window_When_Launching = Boolean.Parse(Settings_File_Content[4].Trim());}
             }
             else if (System.IO.File.Exists("Devious_Bulk_Launcher_Settings.txt") == false)
             {
                 //Create and append default settings to new file
-                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||false|||||");
+                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||false|||||false|||||");
 
                 //Assign default settings
                 Client_Executable_Directory = "";
                 Theme = "Dark";
                 Client_Launch_Seconds = "45";
                 Launch_Client_In_Debug_Mode = false;
+                Hide_Console_Window_When_Launching = false;
             }
         }
 
@@ -283,7 +292,7 @@ namespace Devious_Bulk_Launcher
             }
 
             //Create and append settings to new file
-            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||" + Launch_Client_In_Debug_Mode + "|||||");
+            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||" + Launch_Client_In_Debug_Mode + "|||||" + Hide_Console_Window_When_Launching + "|||||");
         }
 
         private void Button_Add_Click(object sender, EventArgs e)
@@ -354,7 +363,10 @@ namespace Devious_Bulk_Launcher
                             {Concatenated_Parameters += "-debug ";}
 
                             //Start process dynamically with given parameters
-                            Client_Start_Parameters.Add(@"/C java -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());
+                            if (Hide_Console_Window_When_Launching == true)
+                            {Client_Start_Parameters.Add(@"/C javaw -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());}
+                            else if (Hide_Console_Window_When_Launching == false)
+                            {Client_Start_Parameters.Add(@"/C java -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());}                           
 
                             //Reset
                             Concatenated_Parameters = "";
@@ -391,13 +403,30 @@ namespace Devious_Bulk_Launcher
 
         private void Delayed_Launch(List<string> Client_Start_Parameters)
         {
+            //Declare variable
+            Process Process;
+
             //Loop through each Start Parameter
             foreach (string Start_Parameter in Client_Start_Parameters)
             {
                 try
                 {
-                    //Start process with given parameters
-                    System.Diagnostics.Process.Start("cmd.exe", Start_Parameter);
+                    if (Hide_Console_Window_When_Launching == true)
+                    {
+                        //Set initial values with given parameters
+                        Process = new Process();
+                        Process.StartInfo.FileName = "cmd.exe";
+                        Process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        Process.StartInfo.Arguments = Start_Parameter;
+
+                        //Start process
+                        Process.Start();
+                    }
+                    else if (Hide_Console_Window_When_Launching == false)
+                    {
+                        //Start process
+                        System.Diagnostics.Process.Start("cmd.exe", Start_Parameter);
+                    }
 
                     //Dynamic delay(seconds)
                     System.Threading.Thread.Sleep(1000 * Convert.ToInt32(Client_Launch_Seconds));
