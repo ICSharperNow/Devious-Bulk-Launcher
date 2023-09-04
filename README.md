@@ -1,6 +1,6 @@
 # Devious-Bulk-Launcher
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/11d3d3c0-5bc6-46ea-9ce9-b7c31a77e983)
-![Screenshot 2023-09-03 222900](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/d696a419-c3d7-4d09-8d4f-6c1b207332bd)
+![Screenshot 2023-09-03 224047](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/2526bc58-8b6d-439d-8fc2-b7b1fbe9d15a)
 
 
 # About The Project
@@ -91,7 +91,7 @@ Lastly I would highly recommend disabling the "Stretched Mode" plugin as it seem
 Point the application to the client's .jar file and enjoy!
 
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/8fc724c0-ad17-4960-938d-2e135e0b9ab5)
-![Screenshot 2023-09-03 222431](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/1b056b5d-2372-413f-a19f-ba77949b851c)
+![Screenshot 2023-09-03 224047s](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/625fe70a-39e4-44ef-b5ae-1b9c26a6d08f)
 
 
 # Contact
