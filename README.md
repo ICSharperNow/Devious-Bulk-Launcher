@@ -91,7 +91,7 @@ Lastly I would highly recommend disabling the "Stretched Mode" plugin as it seem
 Point the application to the client's .jar file and enjoy!
 
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/8fc724c0-ad17-4960-938d-2e135e0b9ab5)
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/40f58928-1d90-48b0-80ef-63a9e6cda0c4)
+![Screenshot 2023-09-03 222431](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/1b056b5d-2372-413f-a19f-ba77949b851c)
 
 
 # Contact
