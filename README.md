@@ -1,6 +1,6 @@
 # Devious-Bulk-Launcher
 ![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/11d3d3c0-5bc6-46ea-9ce9-b7c31a77e983)
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/a27ee0dc-1cbb-4f84-9c22-c874c474adc6)
+![Screenshot 2023-09-03 222900](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/d696a419-c3d7-4d09-8d4f-6c1b207332bd)
 
 
 # About The Project
