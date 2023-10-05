@@ -1,8 +1,7 @@
 # Devious-Bulk-Launcher
 ![Dark Theme Launcher](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/383fab18-99ee-4108-b070-6d35f0b6aa0b)
-![Dark Theme Settings](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/55a19709-e894-4d84-9be2-6f9956ab8393)
-
 ![Light Theme Launcher](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/fb0923a9-24d3-4691-88ba-19489d32a63a)
+![Dark Theme Settings](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/55a19709-e894-4d84-9be2-6f9956ab8393)
 ![Light Theme Settings](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/eff62d40-4e93-4a83-93a9-4294f1b9883a)
 
 # About The Project
@@ -92,9 +91,8 @@ Lastly I would highly recommend disabling the "Stretched Mode" plugin as it seem
 # Usage
 Point the application to the client's .jar file and enjoy!
 
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/8fc724c0-ad17-4960-938d-2e135e0b9ab5)
-![Screenshot 2023-09-03 224047s](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/625fe70a-39e4-44ef-b5ae-1b9c26a6d08f)
-
+![Point Application to Jar File](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/cae25086-93df-4a2d-8f2f-3671b726ac34)
+![Point Application to Jar File2](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/96c02c92-cf90-461e-a74b-110f7e0c1ef7)
 
 # Contact
 
