@@ -1,7 +1,9 @@
 # Devious-Bulk-Launcher
-![image](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/11d3d3c0-5bc6-46ea-9ce9-b7c31a77e983)
-![Screenshot 2023-09-03 224047](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/2526bc58-8b6d-439d-8fc2-b7b1fbe9d15a)
+![Dark Theme Launcher](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/383fab18-99ee-4108-b070-6d35f0b6aa0b)
+![Dark Theme Settings](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/55a19709-e894-4d84-9be2-6f9956ab8393)
 
+![Light Theme Launcher](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/fb0923a9-24d3-4691-88ba-19489d32a63a)
+![Light Theme Settings](https://github.com/ICSharperNow/Devious-Bulk-Launcher/assets/58089967/eff62d40-4e93-4a83-93a9-4294f1b9883a)
 
 # About The Project
 
