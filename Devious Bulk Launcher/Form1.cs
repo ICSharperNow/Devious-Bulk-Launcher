@@ -12,6 +12,9 @@ using System.Threading;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.Security.Policy;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Devious_Bulk_Launcher
 {
@@ -35,6 +38,10 @@ namespace Devious_Bulk_Launcher
         {
             InitializeComponent();
 
+            //Set launch window position
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Location = new Point(0, 0);
+
             //Set initial values
             Rows_Selected_Thread_Start = new ThreadStart(Update_Rows_Selected);
             Rows_Selected_Thread = new Thread(Rows_Selected_Thread_Start);
@@ -53,7 +60,7 @@ namespace Devious_Bulk_Launcher
             this.Button_Add.Click += Button_Add_Click;
             this.Button_Launch.Click += Button_Launch_Click;
             this.Button_Remove.Click += Button_Remove_Click;
-            this.Button_Save_Config.Click += Button_Save_Config_Click;
+            this.Button_Save_Config.Click += Button_Save_Config_Click;           
 
             //Load settings file
             Load_Settings_File();
@@ -460,7 +467,17 @@ namespace Devious_Bulk_Launcher
 
         private void Button_Settings_Click(object sender, EventArgs e)
         {
-            new Settings_Form().Show();
+            //Validate the settings form isn't already open
+            if (Application.OpenForms["Settings_Form"] == null)
+            {
+                //Launch new settings form
+                new Settings_Form().Show();
+            }
+            else
+            {
+                //Focus already opened form
+                Application.OpenForms["Settings_Form"].Focus();
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -469,16 +486,8 @@ namespace Devious_Bulk_Launcher
             if (Refresh_UI == true)
             {
                 this.Refresh();
-                Button_Save_Config.Hide();
-                Button_Save_Config.Show();
-                Button_Uncheck_All.Hide();
-                Button_Uncheck_All.Show();
-                Button_Add.Hide();
-                Button_Add.Show();
-                Button_Launch.Hide();
-                Button_Launch.Show();
-                Button_Remove.Hide();
-                Button_Remove.Show();
+                Bottom_Group_Panel.Hide();
+                Bottom_Group_Panel.Show();
                 Refresh_UI = false;
             }
 
@@ -491,9 +500,21 @@ namespace Devious_Bulk_Launcher
                     LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, Color.DarkRed, Color.DarkBlue, 90F);
 
                     e.Graphics.FillRectangle(brush, this.ClientRectangle);
-
+                    
                     Label_Rows_Checked.ForeColor = Color.WhiteSmoke;
+
+                    //Background
                     Grid_View.BackgroundColor = Color.Black;
+
+                    //Header
+                    Grid_View.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Orange, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+
+                    //Rows
+                    Grid_View.RowHeadersDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.WhiteSmoke, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.RowsDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.WhiteSmoke, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };                    
+                    Grid_View.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.WhiteSmoke, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.WhiteSmoke, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.RowTemplate.DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.Black, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.WhiteSmoke, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
                 }
                 else if (Form1.Theme == "Light")
                 {
@@ -504,7 +525,19 @@ namespace Devious_Bulk_Launcher
                     e.Graphics.FillRectangle(brush, this.ClientRectangle);
 
                     Label_Rows_Checked.ForeColor = Color.Black;
-                    Grid_View.BackgroundColor = Color.WhiteSmoke;
+
+                    //Background
+                    Grid_View.BackgroundColor = Color.LightGray;
+
+                    //Header
+                    Grid_View.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle(){BackColor = Color.LightSkyBlue, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke};
+                    
+                    //Rows
+                    Grid_View.RowHeadersDefaultCellStyle = new DataGridViewCellStyle(){BackColor = Color.WhiteSmoke, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.RowsDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.WhiteSmoke, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.WhiteSmoke, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.WhiteSmoke, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
+                    Grid_View.RowTemplate.DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.WhiteSmoke, Font = new Font("Microsoft Sans Serif", 8, FontStyle.Bold), ForeColor = Color.Black, SelectionBackColor = Color.DodgerBlue, SelectionForeColor = Color.WhiteSmoke };
                 }
             }
             catch (Exception Exception) { }

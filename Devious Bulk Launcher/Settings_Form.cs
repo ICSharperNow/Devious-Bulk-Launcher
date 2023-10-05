@@ -15,8 +15,12 @@ namespace Devious_Bulk_Launcher
     public partial class Settings_Form : Form
     {
         public Settings_Form()
-        {
+        {           
             InitializeComponent();
+
+            //Set launch window position
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Location = new Point(0, 0);
 
             //Set events
             Button_Set_Executable_Directory.Click += Button_Set_Executable_Directory_Click;
@@ -30,6 +34,9 @@ namespace Devious_Bulk_Launcher
 
             //Set client executable directory textbox
             Textbox_Client_Executable_Directory.Text = Form1.Client_Executable_Directory;
+            Textbox_Client_Executable_Directory.SelectionStart = 0;
+            Textbox_Client_Executable_Directory.SelectionLength = 0;
+            Textbox_Client_Executable_Directory.ScrollToCaret();
 
             //Set theme radio button
             if (Form1.Theme == "Dark")
@@ -79,7 +86,10 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Dark_Theme.ForeColor = Color.WhiteSmoke;
                     Radio_Button_Light_Theme.ForeColor = Color.WhiteSmoke;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.WhiteSmoke;
+                    Number_Up_Down_Client_Launch_Seconds.BackColor = Color.Black;
+                    Number_Up_Down_Client_Launch_Seconds.ForeColor = Color.WhiteSmoke;
                     Label_Launch_Client_In_Debug_Mode.ForeColor = Color.WhiteSmoke;
+                    Label_Hide_Console_Window_When_Launching.ForeColor = Color.WhiteSmoke;
                     Radio_Button_Launch_Client_In_Debug_Mode_Disabled.ForeColor = Color.WhiteSmoke;
                     Radio_Button_Launch_Client_In_Debug_Mode_Enabled.ForeColor = Color.WhiteSmoke;
                     Radio_Button_Hide_Console_Window_When_Launching_Disabled.ForeColor = Color.WhiteSmoke;
@@ -98,7 +108,10 @@ namespace Devious_Bulk_Launcher
                     Radio_Button_Dark_Theme.ForeColor = Color.Black;
                     Radio_Button_Light_Theme.ForeColor= Color.Black;
                     Label_Sec_Between_Client_Launches.ForeColor = Color.Black;
+                    Number_Up_Down_Client_Launch_Seconds.BackColor = Color.WhiteSmoke;
+                    Number_Up_Down_Client_Launch_Seconds.ForeColor = Color.Black;
                     Label_Launch_Client_In_Debug_Mode.ForeColor = Color.Black;
+                    Label_Hide_Console_Window_When_Launching.ForeColor = Color.Black;
                     Radio_Button_Launch_Client_In_Debug_Mode_Disabled.ForeColor = Color.Black;
                     Radio_Button_Launch_Client_In_Debug_Mode_Enabled.ForeColor = Color.Black;
                     Radio_Button_Hide_Console_Window_When_Launching_Disabled.ForeColor = Color.Black;
@@ -172,7 +185,12 @@ namespace Devious_Bulk_Launcher
 
                 //Set client executable directory
                 Form1.Client_Executable_Directory = Open_File_Dialog.FileName.Trim();
-            }            
+
+                //Scroll to beginning of path
+                Textbox_Client_Executable_Directory.SelectionStart = 0;
+                Textbox_Client_Executable_Directory.SelectionLength = 0;
+                Textbox_Client_Executable_Directory.ScrollToCaret();
+            }
 
         }
 
