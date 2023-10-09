@@ -33,7 +33,7 @@ namespace Devious_Bulk_Launcher
             Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Click += Radio_Button_Launch_Client_In_Debug_Mode_Disabled_Click;
             Radio_Button_Hide_Console_Window_When_Launching_Enabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Enabled_Click;
             Radio_Button_Hide_Console_Window_When_Launching_Disabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Disabled_Click;
-            Button_Launch_Client_In_Minimal_Mode.Click += Button_Hidden_Click;
+            Button_Launch_Client_In_Minimal_Mode.Click += Button_Launch_Client_In_Minimal_Mode_Click;
             Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseOverBackColor = Button_Launch_Client_In_Minimal_Mode.BackColor;
             Button_Launch_Client_In_Minimal_Mode.BackColorChanged += (s, e) => { Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseOverBackColor = Button_Launch_Client_In_Minimal_Mode.BackColor; };
             Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -201,7 +201,7 @@ namespace Devious_Bulk_Launcher
 
         }
 
-        private void Button_Hidden_Click(object sender, EventArgs e)
+        private void Button_Launch_Client_In_Minimal_Mode_Click(object sender, EventArgs e)
         {
             //Increment counter
             Button_Launch_Client_In_Minimal_Mode_Click_Counter++;
