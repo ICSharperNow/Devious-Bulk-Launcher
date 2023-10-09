@@ -46,6 +46,7 @@
             this.Radio_Button_Hide_Console_Window_When_Launching_Enabled = new System.Windows.Forms.RadioButton();
             this.Radio_Button_Hide_Console_Window_When_Launching_Disabled = new System.Windows.Forms.RadioButton();
             this.Label_Hide_Console_Window_When_Launching = new System.Windows.Forms.Label();
+            this.Button_Launch_Client_In_Minimal_Mode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Number_Up_Down_Client_Launch_Seconds)).BeginInit();
             this.Panel_Theme.SuspendLayout();
             this.Panel_Launch_Client_In_Debug_Mode.SuspendLayout();
@@ -273,12 +274,25 @@
             this.Label_Hide_Console_Window_When_Launching.TabIndex = 21;
             this.Label_Hide_Console_Window_When_Launching.Text = "Hide console window when launching:";
             // 
+            // Button_Launch_Client_In_Minimal_Mode
+            // 
+            this.Button_Launch_Client_In_Minimal_Mode.BackColor = System.Drawing.Color.Transparent;
+            this.Button_Launch_Client_In_Minimal_Mode.FlatAppearance.BorderSize = 0;
+            this.Button_Launch_Client_In_Minimal_Mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Launch_Client_In_Minimal_Mode.ForeColor = System.Drawing.Color.Transparent;
+            this.Button_Launch_Client_In_Minimal_Mode.Location = new System.Drawing.Point(12, 229);
+            this.Button_Launch_Client_In_Minimal_Mode.Name = "Button_Launch_Client_In_Minimal_Mode";
+            this.Button_Launch_Client_In_Minimal_Mode.Size = new System.Drawing.Size(73, 27);
+            this.Button_Launch_Client_In_Minimal_Mode.TabIndex = 23;
+            this.Button_Launch_Client_In_Minimal_Mode.UseVisualStyleBackColor = false;
+            // 
             // Settings_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(702, 263);
+            this.Controls.Add(this.Button_Launch_Client_In_Minimal_Mode);
             this.Controls.Add(this.Panel_Hide_Console_Window_When_Launching);
             this.Controls.Add(this.Label_Hide_Console_Window_When_Launching);
             this.Controls.Add(this.Panel_Launch_Client_In_Debug_Mode);
@@ -326,5 +340,6 @@
         private System.Windows.Forms.RadioButton Radio_Button_Hide_Console_Window_When_Launching_Enabled;
         private System.Windows.Forms.RadioButton Radio_Button_Hide_Console_Window_When_Launching_Disabled;
         private System.Windows.Forms.Label Label_Hide_Console_Window_When_Launching;
+        private System.Windows.Forms.Button Button_Launch_Client_In_Minimal_Mode;
     }
 }

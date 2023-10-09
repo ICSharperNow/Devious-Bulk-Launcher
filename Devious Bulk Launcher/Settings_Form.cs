@@ -14,6 +14,9 @@ namespace Devious_Bulk_Launcher
 {
     public partial class Settings_Form : Form
     {
+        //Declare variable
+        private int Button_Launch_Client_In_Minimal_Mode_Click_Counter = 0;
+
         public Settings_Form()
         {           
             InitializeComponent();
@@ -30,6 +33,10 @@ namespace Devious_Bulk_Launcher
             Radio_Button_Launch_Client_In_Debug_Mode_Disabled.Click += Radio_Button_Launch_Client_In_Debug_Mode_Disabled_Click;
             Radio_Button_Hide_Console_Window_When_Launching_Enabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Enabled_Click;
             Radio_Button_Hide_Console_Window_When_Launching_Disabled.Click += Radio_Button_Hide_Console_Window_When_Launching_Disabled_Click;
+            Button_Launch_Client_In_Minimal_Mode.Click += Button_Hidden_Click;
+            Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseOverBackColor = Button_Launch_Client_In_Minimal_Mode.BackColor;
+            Button_Launch_Client_In_Minimal_Mode.BackColorChanged += (s, e) => { Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseOverBackColor = Button_Launch_Client_In_Minimal_Mode.BackColor; };
+            Button_Launch_Client_In_Minimal_Mode.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Number_Up_Down_Client_Launch_Seconds.ValueChanged += Number_Up_Down_Client_Launch_Seconds_ValueChanged;
 
             //Set client executable directory textbox
@@ -192,6 +199,38 @@ namespace Devious_Bulk_Launcher
                 Textbox_Client_Executable_Directory.ScrollToCaret();
             }
 
+        }
+
+        private void Button_Hidden_Click(object sender, EventArgs e)
+        {
+            //Increment counter
+            Button_Launch_Client_In_Minimal_Mode_Click_Counter++;
+
+            //Enable/Disable Minimal mode on the 5th click
+            if (Button_Launch_Client_In_Minimal_Mode_Click_Counter >= 5)
+            {
+                //Reset
+                Button_Launch_Client_In_Minimal_Mode_Click_Counter = 0;
+
+                //Enable/Disable Launch Client In Minimal Mode
+                if (Form1.Launch_Client_In_Minimal_Mode == true)
+                {
+                    //Disable
+                    Form1.Launch_Client_In_Minimal_Mode = false;
+                    
+                    //Notify user
+                    MessageBox.Show("Launch Client In Minimal Mode Disabled");
+                }
+                else if (Form1.Launch_Client_In_Minimal_Mode == false)
+                {
+                    //Enable
+                    Form1.Launch_Client_In_Minimal_Mode = true;
+
+                    //Notify user
+                    MessageBox.Show("Launch Client In Minimal Mode Enabled");
+                }
+                
+            }
         }
 
     }

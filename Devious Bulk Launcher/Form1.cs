@@ -33,6 +33,7 @@ namespace Devious_Bulk_Launcher
         public static bool Application_Closing;
         public static bool Launch_Client_In_Debug_Mode;
         public static bool Hide_Console_Window_When_Launching;
+        public static bool Launch_Client_In_Minimal_Mode;
 
         public Form1()
         {
@@ -52,6 +53,7 @@ namespace Devious_Bulk_Launcher
             Application_Closing = false;
             Launch_Client_In_Debug_Mode = false;
             Hide_Console_Window_When_Launching = false;
+            Launch_Client_In_Minimal_Mode = false;
 
             //Set events
             this.FormClosing += Form_Closing;
@@ -162,11 +164,17 @@ namespace Devious_Bulk_Launcher
                 {Hide_Console_Window_When_Launching = false;}
                 else
                 {Hide_Console_Window_When_Launching = Boolean.Parse(Settings_File_Content[4].Trim());}
+
+                //(Launch Client In Minimal Mode)Added to handle prior users that do not have this setting already
+                if (Settings_File_Content[5].Trim() == "")
+                {Launch_Client_In_Minimal_Mode = false;}
+                else
+                {Launch_Client_In_Minimal_Mode = bool.Parse(Settings_File_Content[5].Trim());}
             }
             else if (System.IO.File.Exists("Devious_Bulk_Launcher_Settings.txt") == false)
             {
                 //Create and append default settings to new file
-                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||false|||||false|||||");
+                System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", "|||||Dark|||||45|||||false|||||false|||||false|||||");
 
                 //Assign default settings
                 Client_Executable_Directory = "";
@@ -174,6 +182,7 @@ namespace Devious_Bulk_Launcher
                 Client_Launch_Seconds = "45";
                 Launch_Client_In_Debug_Mode = false;
                 Hide_Console_Window_When_Launching = false;
+                Launch_Client_In_Minimal_Mode = false;
             }
         }
 
@@ -299,7 +308,7 @@ namespace Devious_Bulk_Launcher
             }
 
             //Create and append settings to new file
-            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||" + Launch_Client_In_Debug_Mode + "|||||" + Hide_Console_Window_When_Launching + "|||||");
+            System.IO.File.AppendAllText("Devious_Bulk_Launcher_Settings.txt", Client_Executable_Directory + "|||||" + Theme + "|||||" + Client_Launch_Seconds + "|||||" + Launch_Client_In_Debug_Mode + "|||||" + Hide_Console_Window_When_Launching + "|||||" + Launch_Client_In_Minimal_Mode + "|||||");
         }
 
         private void Button_Add_Click(object sender, EventArgs e)
@@ -334,6 +343,18 @@ namespace Devious_Bulk_Launcher
                     {
                         if ((bool)Grid_Row.Cells[0].Value == true && Grid_Row.Cells[1].Value.ToString().Trim() != "" && Grid_Row.Cells[2].Value.ToString().Trim() != "")
                         {
+                            //Hide Console Window When Launching
+                            if (Hide_Console_Window_When_Launching == true)
+                            {Concatenated_Parameters += "/C javaw -jar ";}
+                            else if (Hide_Console_Window_When_Launching == false)
+                            {Concatenated_Parameters += "/C java -jar ";}
+
+                            //Launch Client In Minimal Mode
+                            if (Launch_Client_In_Minimal_Mode == true)
+                            {Concatenated_Parameters += @"-XX:ActiveProcessorCount=1 -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Xmx256m -XX:MaxMetaspaceSize=256m """ + Client_Executable_Directory + @""" --minimal --script ""Unethical Auto Login"" ";}
+                            else if (Launch_Client_In_Minimal_Mode == false)
+                            {Concatenated_Parameters += @"-Xmx512m -Xms256m """ + Client_Executable_Directory + @""" ";}
+
                             //Login
                             Concatenated_Parameters += "-login " + Grid_Row.Cells[1].Value.ToString() + ":" + Grid_Row.Cells[2].Value.ToString() + " ";
 
@@ -369,11 +390,8 @@ namespace Devious_Bulk_Launcher
                             if (Launch_Client_In_Debug_Mode == true)
                             {Concatenated_Parameters += "-debug ";}
 
-                            //Start process dynamically with given parameters
-                            if (Hide_Console_Window_When_Launching == true)
-                            {Client_Start_Parameters.Add(@"/C javaw -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());}
-                            else if (Hide_Console_Window_When_Launching == false)
-                            {Client_Start_Parameters.Add(@"/C java -jar """ + Client_Executable_Directory + @""" " + Concatenated_Parameters.Trim());}                           
+                            //Add start parameters to array
+                            Client_Start_Parameters.Add(Concatenated_Parameters.Trim());
 
                             //Reset
                             Concatenated_Parameters = "";
