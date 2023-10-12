@@ -96,7 +96,10 @@ namespace Devious_Bulk_Launcher
                         if (Grid_Row.Cells[0].GetEditedFormattedValue(Grid_Row.Index, DataGridViewDataErrorContexts.Formatting) != null)
                         {
                             if ((bool)Grid_Row.Cells[0].GetEditedFormattedValue(Grid_Row.Index, DataGridViewDataErrorContexts.Formatting) == true)
-                            {Checked_Count++;}
+                            {
+                                //Increment Checked Count
+                                Checked_Count++;
+                            }
                         }
                     }
 
@@ -351,9 +354,9 @@ namespace Devious_Bulk_Launcher
 
                             //Launch Client In Minimal Mode
                             if (Launch_Client_In_Minimal_Mode == true)
-                            {Concatenated_Parameters += @"-XX:ActiveProcessorCount=1 -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Xmx256m -XX:MaxMetaspaceSize=256m """ + Client_Executable_Directory + @""" --minimal --script ""Unethical Auto Login"" ";}
+                            {Concatenated_Parameters += @"-XX:ActiveProcessorCount=1 -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Xmx768m -XX:MaxMetaspaceSize=256m """ + Client_Executable_Directory + @""" --minimal --script ""Unethical Auto Login"" ";}
                             else if (Launch_Client_In_Minimal_Mode == false)
-                            {Concatenated_Parameters += @"-Xmx512m -Xms256m """ + Client_Executable_Directory + @""" ";}
+                            {Concatenated_Parameters += @"-Xmx768m -Xms256m """ + Client_Executable_Directory + @""" ";}
 
                             //Login
                             Concatenated_Parameters += "-login " + Grid_Row.Cells[1].Value.ToString() + ":" + Grid_Row.Cells[2].Value.ToString() + " ";
