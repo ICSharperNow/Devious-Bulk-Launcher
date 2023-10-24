@@ -326,12 +326,10 @@ namespace Devious_Bulk_Launcher
             List<string> Client_Start_Parameters;
             string Concatenated_Parameters;
             DialogResult Dialog_Result;
-            int[] Processor_Counts;
 
             //Set initial values
             Client_Start_Parameters = new List<string>();
             Concatenated_Parameters = "";
-            Processor_Counts = new int[] {4, 6, 8};
 
             //Return if the client executable path has not been set
             if (Client_Executable_Directory == "")
@@ -356,7 +354,7 @@ namespace Devious_Bulk_Launcher
 
                             //Launch Client In Minimal Mode
                             if (Launch_Client_In_Minimal_Mode == true)
-                            {Concatenated_Parameters += @"-XX:ActiveProcessorCount=" + Processor_Counts[new Random().Next(0, 2)].ToString() + @" -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Xmx768m -XX:MaxMetaspaceSize=256m """ + Client_Executable_Directory + @""" --minimal --script ""Unethical Auto Login"" ";}
+                            {Concatenated_Parameters += @"-XX:ActiveProcessorCount=4 -Dsun.java2d.d3d=false -Dsun.java2d.opengl=false -Xmx768m -XX:MaxMetaspaceSize=256m """ + Client_Executable_Directory + @""" --minimal --script ""Unethical Auto Login"" ";}
                             else if (Launch_Client_In_Minimal_Mode == false)
                             {Concatenated_Parameters += @"-Xmx768m -Xms256m """ + Client_Executable_Directory + @""" ";}
                             
